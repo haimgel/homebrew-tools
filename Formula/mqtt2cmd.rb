@@ -5,11 +5,11 @@
 class Mqtt2cmd < Formula
   desc "MQTT to command-line applications gateway."
   homepage "https://github.com/haimgel/mqtt2cmd"
-  version "0.0.1"
+  version "0.1.0"
 
   on_macos do
-    url "https://github.com/haimgel/mqtt2cmd/releases/download/0.0.1/mqtt2cmd_0.0.1_Darwin_all.tar.gz"
-    sha256 "b6bd0b060a280d18f517494544912dc1fb35d0f74393501e67a3cd8d309ac95d"
+    url "https://github.com/haimgel/mqtt2cmd/releases/download/v0.1.0/mqtt2cmd_0.1.0_Darwin_all.tar.gz"
+    sha256 "f7475d13aaced6106f6fea0452ccc094beb657fdda3dc8c54f76e2658ef6e9e7"
 
     def install
       bin.install "mqtt2cmd"
@@ -18,16 +18,16 @@ class Mqtt2cmd < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/haimgel/mqtt2cmd/releases/download/0.0.1/mqtt2cmd_0.0.1_Linux_arm64.tar.gz"
-      sha256 "a22b62e83e8d1849ffbecb37bcddb5375c83706cd0c38e0d5cb9f284874106e7"
+      url "https://github.com/haimgel/mqtt2cmd/releases/download/v0.1.0/mqtt2cmd_0.1.0_Linux_arm64.tar.gz"
+      sha256 "4c9e3bf8cc05f6f218cf7eccbc663797c308c9437d0b8b2d34ba74588f0a8a10"
 
       def install
         bin.install "mqtt2cmd"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/haimgel/mqtt2cmd/releases/download/0.0.1/mqtt2cmd_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "358d1cc6143e60b5cfec1f5317d4084544b9cc0527d28a239ca1e4b1a7d1e77a"
+      url "https://github.com/haimgel/mqtt2cmd/releases/download/v0.1.0/mqtt2cmd_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "3704b6ce4b6d41d3756b4fc8d69fbbb7f1632910d1f13c702a6dc9b2069c173e"
 
       def install
         bin.install "mqtt2cmd"
@@ -36,10 +36,10 @@ class Mqtt2cmd < Formula
   end
 
   service do
-    run: mqtt2cmd
+    run [opt_bin/"mqtt2cmd"]
   end
 
   test do
-    assert_match /help string/, shell_output("#{bin}/mqtt2cmd -h", 0)
+    assert_match /Usage of/, shell_output("#{bin}/mqtt2cmd -h", 0)
   end
 end
