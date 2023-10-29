@@ -5,11 +5,11 @@
 class SlackStatus < Formula
   desc "Set Slack status to predefined values from a command line."
   homepage "https://github.com/haimgel/slack-status-go"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
-    url "https://github.com/haimgel/slack-status-go/releases/download/v0.2.0/slack-status_0.2.0_darwin_all.tar.gz"
-    sha256 "b2b07b7103af1d2d8d5d97c6ea35440f51b5ba751c8980f09956c8320f521263"
+    url "https://github.com/haimgel/slack-status-go/releases/download/0.2.1/slack-status_0.2.1_darwin_all.tar.gz"
+    sha256 "42398efe0ef9af8ef4204e0ef50cc754dbcd23fdfe3bb0419bee1d2a242b1e04"
 
     def install
       bin.install "slack-status"
@@ -18,16 +18,16 @@ class SlackStatus < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/haimgel/slack-status-go/releases/download/v0.2.0/slack-status_0.2.0_linux_arm64.tar.gz"
-      sha256 "4f02444566d5af5203a3bf08fc3b90dfa993be0f41d617eef3b367f75ce41ff3"
+      url "https://github.com/haimgel/slack-status-go/releases/download/0.2.1/slack-status_0.2.1_linux_arm64.tar.gz"
+      sha256 "9fb477ac631e353adaf1b6ae6dc4fd643a132980ba8edb265ea7b916d267fc09"
 
       def install
         bin.install "slack-status"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/haimgel/slack-status-go/releases/download/v0.2.0/slack-status_0.2.0_linux_amd64.tar.gz"
-      sha256 "c63b419bd40fdc07d1a27ef5ae7cab34a673b699e0554aa5e4557ed1ec6a8a5c"
+      url "https://github.com/haimgel/slack-status-go/releases/download/0.2.1/slack-status_0.2.1_linux_amd64.tar.gz"
+      sha256 "9b3caf569915f7223d229f01e735a4ae48360277be108d05304f2b552f114d8a"
 
       def install
         bin.install "slack-status"
