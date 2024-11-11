@@ -4,11 +4,11 @@
 class DisplaySwitch < Formula
   desc "An utility to watch for USB device connect/disconnect events and switch display inputs via DDC/CI."
   homepage "https://github.com/haimgel/display-switch"
-  version "1.4.0-prerelease"
+  version "1.4.0"
 
   on_macos do
-    url "https://github.com/haimgel/display-switch/releases/download/1.4.0-prerelease/display_switch-v1.4.0-macos-universal.zip"
-    sha256 "dd68195f50edeabfacaf19921c7d961329493061993836186f40a25e1f95dd1c"
+    url "https://github.com/haimgel/display-switch/releases/download/1.4.0/display_switch-v1.4.0-macos-universal.zip"
+    sha256 "61911a8a70b38c710403a5c7064050f792441126ad3d0478dbf96a8308724275"
 
     def install
       bin.install "display_switch"
