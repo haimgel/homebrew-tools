@@ -6,6 +6,8 @@ class DisplaySwitch < Formula
   homepage "https://github.com/haimgel/display-switch"
   version "1.4.0"
 
+  depends_on "libusb"
+
   on_macos do
     url "https://github.com/haimgel/display-switch/releases/download/1.4.0/display_switch-v1.4.0-macos-universal.zip"
     sha256 "61911a8a70b38c710403a5c7064050f792441126ad3d0478dbf96a8308724275"
@@ -13,6 +15,10 @@ class DisplaySwitch < Formula
     def install
       bin.install "display_switch"
     end
+  end
+
+  service do
+    run [opt_bin/"display_switch"]
   end
 
   test do
