@@ -33,8 +33,6 @@ class SlackStatus < Formula
     end
   end
 
-  sigstore :default
-
   test do
     assert_match /Set Slack status/, shell_output("#{bin}/slack-status -h", 0)
   end
