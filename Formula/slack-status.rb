@@ -5,11 +5,11 @@
 class SlackStatus < Formula
   desc "Set Slack status to predefined values from a command line."
   homepage "https://github.com/haimgel/slack-status-go"
-  version "0.3.2"
+  version "0.3.3"
 
   on_macos do
-    url "https://github.com/haimgel/slack-status-go/releases/download/0.3.2/slack-status_0.3.2_darwin_all.tar.gz"
-    sha256 "e1dee648cb0da87a79905c26636b6e75451fd337da059639b278dc7cf25a9c48"
+    url "https://github.com/haimgel/slack-status-go/releases/download/0.3.3/slack-status_0.3.3_darwin_all.tar.gz"
+    sha256 "bc7ff778c3ac26c9ed1cacb1f384c5e6a8bfae6fe1be91d7aec9dcab712b5baa"
 
     def install
       bin.install "slack-status"
@@ -17,24 +17,18 @@ class SlackStatus < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/haimgel/slack-status-go/releases/download/0.3.2/slack-status_0.3.2_linux_amd64.tar.gz"
-        sha256 "f0abbda3081d83f36c8b2cdd99834eeca1f490ea07929ee0c31dd2b23104016e"
-
-        def install
-          bin.install "slack-status"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/haimgel/slack-status-go/releases/download/0.3.3/slack-status_0.3.3_linux_amd64.tar.gz"
+      sha256 "aeb141ac31694a9db5708ebbd189a493e95a0c6a75019aa0266be155321e6100"
+      def install
+        bin.install "slack-status"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/haimgel/slack-status-go/releases/download/0.3.2/slack-status_0.3.2_linux_arm64.tar.gz"
-        sha256 "32be36502331ab1ddf1d13bd0258d58b64467be63eb0c6e53c762b0e7ca05e9f"
-
-        def install
-          bin.install "slack-status"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/haimgel/slack-status-go/releases/download/0.3.3/slack-status_0.3.3_linux_arm64.tar.gz"
+      sha256 "4b4b3df9817d45533304ffb1816f47c8689fe8c316b2970d97e84f5bc6b00501"
+      def install
+        bin.install "slack-status"
       end
     end
   end
