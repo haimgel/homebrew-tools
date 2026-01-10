@@ -5,11 +5,11 @@
 class EzshareSync < Formula
   desc "Synchronize files from EzShare Wi-Fi SD Card."
   homepage "https://github.com/haimgel/ezshare-sync"
-  version "1.0.1"
+  version "1.1.0"
 
   on_macos do
-    url "https://github.com/haimgel/ezshare-sync/releases/download/v1.0.1/ezshare-sync_1.0.1_darwin_all.tar.gz"
-    sha256 "c0164c7e4bba56bac8af53a926fb6382e63cec6ceba4a2623212679ecbb8781e"
+    url "https://github.com/haimgel/ezshare-sync/releases/download/v1.1.0/ezshare-sync_1.1.0_darwin_all.tar.gz"
+    sha256 "c0cb5774fbd8f8b3f547baad68a2d1e28090d6767c460cb4fc67d8f0b0410bb3"
 
     def install
       bin.install "ezshare-sync"
@@ -18,15 +18,15 @@ class EzshareSync < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/haimgel/ezshare-sync/releases/download/v1.0.1/ezshare-sync_1.0.1_linux_amd64.tar.gz"
-      sha256 "4b35f3e47c4b292fdb5bb78ce0dcfec8f92ffdf1004cd0342f285c46793b146c"
+      url "https://github.com/haimgel/ezshare-sync/releases/download/v1.1.0/ezshare-sync_1.1.0_linux_amd64.tar.gz"
+      sha256 "d0ce4b542f62c90519bcab6de0bd9b2bca0401f35cb69d83f7fbf3c50b590cbc"
       def install
         bin.install "ezshare-sync"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/haimgel/ezshare-sync/releases/download/v1.0.1/ezshare-sync_1.0.1_linux_arm64.tar.gz"
-      sha256 "cc79403d8cd8a34f4cc81deeab13eea3f289793cda16c73f134c7743d7e799cc"
+      url "https://github.com/haimgel/ezshare-sync/releases/download/v1.1.0/ezshare-sync_1.1.0_linux_arm64.tar.gz"
+      sha256 "dfbb191a9e2c8a3c461eac7cac4344bf568f200ed864f1627db0ea66949d3d72"
       def install
         bin.install "ezshare-sync"
       end
