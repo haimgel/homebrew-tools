@@ -9,7 +9,7 @@ class EzshareSync < Formula
 
   on_macos do
     url "https://github.com/haimgel/ezshare-sync/releases/download/v1.1.0/ezshare-sync_1.1.0_darwin_all.tar.gz"
-    sha256 "c0cb5774fbd8f8b3f547baad68a2d1e28090d6767c460cb4fc67d8f0b0410bb3"
+    sha256 "42d2c6b9955a0629cc43456252015274b9b00376d90561cda6e0cf87d726a294"
 
     def install
       bin.install "ezshare-sync"
@@ -19,14 +19,14 @@ class EzshareSync < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/haimgel/ezshare-sync/releases/download/v1.1.0/ezshare-sync_1.1.0_linux_amd64.tar.gz"
-      sha256 "d0ce4b542f62c90519bcab6de0bd9b2bca0401f35cb69d83f7fbf3c50b590cbc"
+      sha256 "5aa8d26f6bd42cf830b32ba6c95fdc668c41f163a8f7f8392a2f17bb935a5d59"
       def install
         bin.install "ezshare-sync"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/haimgel/ezshare-sync/releases/download/v1.1.0/ezshare-sync_1.1.0_linux_arm64.tar.gz"
-      sha256 "dfbb191a9e2c8a3c461eac7cac4344bf568f200ed864f1627db0ea66949d3d72"
+      sha256 "d5f8cb15b2c9efaf2cc215e2295662d4a78101256b1ddca303cb60d6ad032aa7"
       def install
         bin.install "ezshare-sync"
       end
